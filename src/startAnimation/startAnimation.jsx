@@ -1,25 +1,45 @@
-import { useState } from "react";
-import aarhusSilhouette from "./assets/citySilhoutte.png";
-import startPage from "./StartPage.module.css";
-import ContentCon from "./ContentCon/contentCon";
+import startPage from "./startAnimation.module.css";
+import { useEffect, useState } from "react";
 
-function App() {
+//Img
+import aarhusSilhouette from "../assets/citySilhoutte.png";
+
+export const StartAnimation = ({ setPageNum }) => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [scroll, setScroll] = useState(false);
+  const [boksSwitch, setBoksSwitch] = useState(false);
+
+  setTimeout(() => {
+    setScroll(true);
+    console.log("Scroll true");
+  }, 6500);
+
+  setTimeout(() => {
+    setBoksSwitch(true);
+  }, 3500);
 
   setTimeout(() => {
     setIsAnimating(true);
   }, 2000);
 
+  if (!scroll) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <div className={startPage.con}>
       <div
         className={
-          isAnimating
-            ? `${startPage.logoCon} ${startPage.logoConAni} ${startPage.logoConAni2}`
-            : startPage.logoCon
+          boksSwitch == false
+            ? isAnimating
+              ? `${startPage.logoCon} ${startPage.logoConAni} ${startPage.logoConAni2}`
+              : startPage.logoCon
+            : startPage.newBoks
         }
       ></div>
-      <ContentCon isAnimating={isAnimating} />
+      <div className={startPage.blackBoxBig}></div>
       <div
         className={
           isAnimating
@@ -54,6 +74,4 @@ function App() {
       </div>
     </div>
   );
-}
-
-export default App;
+};

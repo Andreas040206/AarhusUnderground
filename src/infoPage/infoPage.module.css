@@ -1,0 +1,82 @@
+.con {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  font-size: 20px;
+}
+
+.backBtn {
+  padding: 0px 0px 30px 0px;
+  height: 60px;
+  width: 80px;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  border: none;
+  background-color: white;
+  font-size: 50px;
+  transform: rotate(180deg);
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.285);
+}
+
+.img {
+  height: 300px;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.textCon {
+  padding: 20px 30px;
+}
+
+.header {
+  font-size: 40px;
+  font-family: "Anton", sans-serif;
+}
+
+.blackTextBoxCon {
+  display: flex;
+  flex-direction: column;
+}
+
+.blackTextBox {
+  padding: 40px 30px;
+  background: black;
+  color: white;
+}
+
+.cityImg {
+  width: 100vw;
+}
+
+.cityImgRotated {
+  margin-top: -5px;
+  transform: rotate(180deg);
+}
+
+.bottomTextBoxCon {
+  margin-top: calc(-100vw / 500 * 148);
+  background-image: url("../assets/Beton.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bottomTextBox {
+  padding: 150px 30px;
+  color: white;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mapsCon {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.maps {
+  height: 110vh;
+  width: 100vw;
+  border: none;
+  margin-top: -70px;
+}

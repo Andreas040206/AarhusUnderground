@@ -5,21 +5,18 @@ import ringgadebroenImgSrc from "../assets/ringgadebroen.jpg";
 import kulbroenImgSrc from "../assets/kulbroen.webp";
 import molslinjenImgSrc from "../assets/molslinjen.jpg";
 
-const ContentCon = ({ isAnimating }) => {
+export const ContentCon = ({ setPageNum }) => {
   return (
-    <div
-      className={
-        isAnimating
-          ? `${contentCon.con} ${contentCon.conHidden}`
-          : contentCon.con
-      }
-    >
+    <div className={contentCon.con}>
       <ContentBtn
         imgSrc={godsbanenImgSrc}
         header={"GODSBANEN"}
         text={
           "Godsbanen er et kreaticvt og speandende sted med mange unge menensker osv. Vi slutter"
         }
+        setPageNum={() => {
+          setPageNum(2);
+        }}
       />
       <ContentBtn
         imgSrc={ringgadebroenImgSrc}
@@ -27,6 +24,9 @@ const ContentCon = ({ isAnimating }) => {
         text={
           "Under ringadebroen findes der et livligt ungdomsmiljo med koncerter og barer."
         }
+        setPageNum={() => {
+          setPageNum(3);
+        }}
       />
       <ContentBtn
         imgSrc={kulbroenImgSrc}
@@ -34,6 +34,9 @@ const ContentCon = ({ isAnimating }) => {
         text={
           "Ved kulbroen findes kunst og spaendende mennesker som har meget forskellige ting"
         }
+        setPageNum={() => {
+          setPageNum(4);
+        }}
       />
       <ContentBtn
         imgSrc={molslinjenImgSrc}
@@ -41,14 +44,16 @@ const ContentCon = ({ isAnimating }) => {
         text={
           "Godsbanen er et kreaticvt og speandende sted med mange unge menensker osv. Vi slutter"
         }
+        setPageNum={() => {
+          setPageNum(5);
+        }}
       />
-
-      <iframe
-        className={contentCon.map}
-        src="https://www.google.com/maps/d/embed?mid=1Cw5BHmFKQe-ASUTe4PbIDiTt-HDLZOk&ehbc=2E312F&noprof=1"
-      ></iframe>
+      <div className={contentCon.mapsCon}>
+        <iframe
+          className={contentCon.map}
+          src="https://www.google.com/maps/d/embed?mid=1Cw5BHmFKQe-ASUTe4PbIDiTt-HDLZOk&ehbc=2E312F&noprof=1&z=12"
+        ></iframe>
+      </div>
     </div>
   );
 };
-
-export default ContentCon;
